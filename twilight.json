@@ -1,146 +1,148 @@
 {
-  "name": {
-    "ar": "PMP Performance",
-    "en": "PMP Performance"
-  },
-  "repository": "https://github.com/pmp-performance/pmp-performance-salla-theme",
-  "author_email": "info@pmpperformance.online",
-  "description": {
-    "ar": "ثيم مخصص مستقل لمتجر PMP Performance لقطع أداء المحركات وتجهيز المشاريع.",
-    "en": "An independent custom theme for PMP Performance engine parts and complete performance builds."
-  },
-  "support_url": "https://pmpperformance.online/",
-  "features": [
-    "mega-menu",
-    "fonts",
-    "color",
-    "breadcrumb",
-    "unite-cards-height",
-    "menu-images",
-    "filters"
-  ],
-  "settings": [
-    {
-      "id": "header_is_sticky",
-      "label": "تثبيت الهيدر عند التمرير",
-      "description": "يحافظ على أدوات البحث والسلة في أعلى الصفحة أثناء التصفح.",
-      "type": "boolean",
-      "icon": "sicon-toggle-off",
-      "format": "switch",
-      "required": false,
-      "value": true,
-      "selected": true
+    "name": {
+        "ar": "PMP Performance",
+        "en": "PMP Performance"
     },
-    {
-      "id": "enable_more_menu",
-      "label": "تجميع روابط القائمة الإضافية",
-      "description": "يجمع الروابط التي لا تتسع في شريط التنقل داخل قائمة المزيد.",
-      "type": "boolean",
-      "icon": "sicon-toggle-off",
-      "format": "switch",
-      "required": false,
-      "value": true,
-      "selected": true
+    "repository": "https://github.com/pmp-performance/pmp-performance-salla-theme",
+    "author_email": "info@pmpperformance.online",
+    "description": {
+        "ar": "ثيم مخصص مستقل لمتجر PMP Performance لقطع أداء المحركات وتجهيز المشاريع.",
+        "en": "An independent custom theme for PMP Performance engine parts and complete performance builds."
     },
-    {
-      "id": "product_show_breadcrumbs",
-      "label": "إظهار مسار التنقل في صفحة المنتج",
-      "type": "boolean",
-      "icon": "sicon-toggle-off",
-      "format": "switch",
-      "required": false,
-      "value": true,
-      "selected": true
-    },
-    {
-      "id": "product_index_show_breadcrumbs",
-      "label": "إظهار مسار التنقل في صفحات الأقسام والمنتجات",
-      "type": "boolean",
-      "icon": "sicon-toggle-off",
-      "format": "switch",
-      "required": false,
-      "value": true,
-      "selected": true
-    },
-    {
-      "id": "enable_add_product_toast",
-      "label": "إظهار إشعار الإضافة للسلة",
-      "type": "boolean",
-      "icon": "sicon-toggle-off",
-      "format": "switch",
-      "required": false,
-      "value": true,
-      "selected": true
-    },
-    {
-      "id": "notify_when_available_in_card",
-      "label": "إظهار زر أعلمني عند التوفر",
-      "type": "boolean",
-      "icon": "sicon-toggle-off",
-      "format": "switch",
-      "required": false,
-      "value": true,
-      "selected": true
-    },
-    {
-      "id": "sticky_add_to_cart",
-      "label": "تثبيت الإضافة للسلة على الجوال",
-      "type": "boolean",
-      "icon": "sicon-toggle-off",
-      "format": "switch",
-      "required": false,
-      "value": true,
-      "selected": true
-    },
-    {
-      "id": "show_tags",
-      "label": "إظهار وسوم المنتج",
-      "type": "boolean",
-      "icon": "sicon-toggle-off",
-      "format": "switch",
-      "required": false,
-      "value": true,
-      "selected": true
-    },
-    {
-      "id": "slider_background_size",
-      "type": "items",
-      "format": "dropdown-list",
-      "label": "طريقة عرض صور المنتج",
-      "icon": "sicon-list",
-      "selected": [
+    "support_url": "https://pmpperformance.online/",
+    "features": [
+        "mega-menu",
+        "fonts",
+        "color",
+        "breadcrumb",
+        "unite-cards-height",
+        "menu-images",
+        "filters",
+        "component-featured-products",
+        "component-fixed-banner"
+    ],
+    "settings": [
         {
-          "label": "إظهار الصورة كاملة",
-          "value": "contain",
-          "key": "f4adec13-6e4c-433b-b141-b2807935ced9"
-        }
-      ],
-      "options": [
-        {
-          "label": "تغطية كامل المساحة",
-          "value": "cover",
-          "key": "e9c8ea8f-c5c6-438e-9d45-3bce269afde4"
+            "id": "header_is_sticky",
+            "label": "تثبيت الهيدر عند التمرير",
+            "description": "يحافظ على أدوات البحث والسلة في أعلى الصفحة أثناء التصفح.",
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
         },
         {
-          "label": "إظهار الصورة كاملة",
-          "value": "contain",
-          "key": "f4adec13-6e4c-433b-b141-b2807935ced9"
+            "id": "enable_more_menu",
+            "label": "تجميع روابط القائمة الإضافية",
+            "description": "يجمع الروابط التي لا تتسع في شريط التنقل داخل قائمة المزيد.",
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "id": "product_show_breadcrumbs",
+            "label": "إظهار مسار التنقل في صفحة المنتج",
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "id": "product_index_show_breadcrumbs",
+            "label": "إظهار مسار التنقل في صفحات الأقسام والمنتجات",
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "id": "enable_add_product_toast",
+            "label": "إظهار إشعار الإضافة للسلة",
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "id": "notify_when_available_in_card",
+            "label": "إظهار زر أعلمني عند التوفر",
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "id": "sticky_add_to_cart",
+            "label": "تثبيت الإضافة للسلة على الجوال",
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "id": "show_tags",
+            "label": "إظهار وسوم المنتج",
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
+        },
+        {
+            "id": "slider_background_size",
+            "type": "items",
+            "format": "dropdown-list",
+            "label": "طريقة عرض صور المنتج",
+            "icon": "sicon-list",
+            "selected": [
+                {
+                    "label": "إظهار الصورة كاملة",
+                    "value": "contain",
+                    "key": "f4adec13-6e4c-433b-b141-b2807935ced9"
+                }
+            ],
+            "options": [
+                {
+                    "label": "تغطية كامل المساحة",
+                    "value": "cover",
+                    "key": "e9c8ea8f-c5c6-438e-9d45-3bce269afde4"
+                },
+                {
+                    "label": "إظهار الصورة كاملة",
+                    "value": "contain",
+                    "key": "f4adec13-6e4c-433b-b141-b2807935ced9"
+                }
+            ],
+            "source": "Manual",
+            "required": true
+        },
+        {
+            "id": "imageZoom",
+            "label": "تكبير صور المنتج",
+            "description": "يتيح تكبير تفاصيل صورة المنتج عند المرور عليها.",
+            "type": "boolean",
+            "icon": "sicon-toggle-off",
+            "format": "switch",
+            "required": false,
+            "value": true,
+            "selected": true
         }
-      ],
-      "source": "Manual",
-      "required": true
-    },
-    {
-      "id": "imageZoom",
-      "label": "تكبير صور المنتج",
-      "description": "يتيح تكبير تفاصيل صورة المنتج عند المرور عليها.",
-      "type": "boolean",
-      "icon": "sicon-toggle-off",
-      "format": "switch",
-      "required": false,
-      "value": true,
-      "selected": true
-    }
-  ],
-  "components": []
+    ],
+    "components": []
 }
