@@ -1,0 +1,38 @@
+name: Install final PMP design
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/install-final-design.yml'
+permissions:
+  contents: write
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Copy the verified PMP storefront
+        run: |
+          git clone --depth 1 https://github.com/ABODAH1234/pmp-store-v2.git /tmp/pmp-store-v2
+          rm -rf src public
+          cp -R /tmp/pmp-store-v2/src ./src
+          cp -R /tmp/pmp-store-v2/public ./public
+          cp /tmp/pmp-store-v2/webpack.config.js ./webpack.config.js
+          cp /tmp/pmp-store-v2/tailwind.config.js ./tailwind.config.js
+          cp /tmp/pmp-store-v2/postcss.config.js ./postcss.config.js
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '10'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm production
+      - name: Commit final design
+        run: |
+          git config user.name "PMP Theme Builder"
+          git config user.email "info@pmpperformance.online"
+          git add src public webpack.config.js tailwind.config.js postcss.config.js
+          git commit -m "Install final PMP storefront design"
+          git push
