@@ -1,0 +1,20 @@
+<footer data-testid="store-footer" class="store-footer pmp-footer">
+<div class="pmp-wrap pmp-footer-grid">
+<div class="pmp-footer-brand"><a href="{{ store.url }}"><span class="pmp-logo-mark" role="img" aria-label="{{ store.name }}"></span></a><p>عالم التعديل بين يديك</p><salla-trust-badges dark></salla-trust-badges></div>
+<div id="pmp-policy-pages"><h2>السياسات والروابط</h2><salla-menu source="footer" with-cookie-preferences></salla-menu></div>
+<div><h2>طلبات خاصة</h2><a href="{{ store.url }}#pmp-requests" data-pmp-request="طلب قطع تعديل">طلب قطع تعديل</a><a href="{{ store.url }}#pmp-requests" data-pmp-request="طلب قطع وكالة">طلب قطع وكالة</a><a href="{{ link('products') }}">جميع المنتجات</a></div>
+<div id="pmp-contact"><h2>تواصل معنا</h2><salla-contacts></salla-contacts><salla-social></salla-social>
+{% if store.contacts.whatsapp %}<a class="pmp-social-link" href="https://wa.me/{{ store.contacts.whatsapp|replace({'+':'',' ':'','-':''}) }}" rel="noopener" target="_blank"><i class="sicon-whatsapp" aria-hidden="true"></i> واتساب</a>{% endif %}
+{% if store.social.snapchat %}<a class="pmp-social-link" href="{{ store.social.snapchat }}" rel="noopener" target="_blank"><i class="sicon-snapchat" aria-hidden="true"></i> سناب شات</a>{% endif %}
+</div></div>
+<div class="pmp-wrap pmp-footer-slogan" aria-hidden="true">PERFORMANCE &nbsp; / &nbsp; BUILDS &nbsp; / &nbsp; BETTER &nbsp; / &nbsp; STORIES</div>
+<div class="pmp-wrap pmp-copyright">{% hook copyright %}{% if store.settings.tax.number %}<span>الرقم الضريبي: {{ store.settings.tax.number }}</span>{% endif %}</div>
+</footer>
+<dialog id="pmp-request-dialog" aria-labelledby="pmp-request-title" data-whatsapp="{{ store.contacts.whatsapp }}" data-email="{{ store.contacts.email }}">
+<button type="button" class="pmp-dialog-close" aria-label="إغلاق">×</button><h2 id="pmp-request-title">طلب قطع تعديل</h2>
+<form id="pmp-request-form">
+<label for="pmp-car">السيارة والموديل والمحرك</label><input id="pmp-car" name="car" required maxlength="160" autocomplete="off">
+<label for="pmp-part">رقم القطعة أو الشاص (اختياري)</label><input id="pmp-part" name="part" maxlength="100" autocomplete="off">
+<label for="pmp-details">القطعة المطلوبة والتفاصيل</label><textarea id="pmp-details" name="details" required maxlength="1500" rows="4"></textarea>
+<p>نراجع التوافق والتوفر والسعر قبل تأكيد الطلب.</p><button type="submit" class="pmp-submit">تجهيز رسالة الطلب</button>
+<div id="pmp-request-result" role="status"></div></form></dialog>
