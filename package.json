@@ -1,7 +1,7 @@
 {
-  "name": "pmp-performance-theme",
+  "name": "pmp-performance-store-theme",
   "version": "1.0.0",
-  "description": "Custom Salla Twilight theme for PMP Performance",
+  "description": "Independent PMP Performance Store theme for Salla Twilight",
   "license": "MIT",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
