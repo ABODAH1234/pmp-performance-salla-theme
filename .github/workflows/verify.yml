@@ -24,7 +24,7 @@ jobs:
           const fs=require('node:fs'),assert=require('node:assert/strict');
           const meta=JSON.parse(fs.readFileSync('twilight.json','utf8'));
           const pkg=JSON.parse(fs.readFileSync('package.json','utf8'));
-          assert.equal(meta.repository,'https://github.com/ABODAH1234/pmp-performance-salla-theme');
-          assert.equal(pkg.repository.url,'git+https://github.com/ABODAH1234/pmp-performance-salla-theme.git');
+          assert.equal(meta.repository,'https://github.com/ABODAH1234/pmp-performance-theme-final');
+          assert.equal(pkg.repository.url,'git+https://github.com/ABODAH1234/pmp-performance-theme-final.git');
           for(const f of ['public/app.css','public/app.js','public/pmp.css','public/pmp.js']) assert(fs.statSync(f).size>0,f);
           NODE
