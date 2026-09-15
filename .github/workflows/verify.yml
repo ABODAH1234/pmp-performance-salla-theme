@@ -1,0 +1,30 @@
+name: Verify PMP theme
+on:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  production:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: pnpm/action-setup@v4
+        with:
+          version: '10'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm production
+      - name: Validate Salla metadata
+        run: |
+          node <<'NODE'
+          const fs=require('node:fs'),assert=require('node:assert/strict');
+          const meta=JSON.parse(fs.readFileSync('twilight.json','utf8'));
+          const pkg=JSON.parse(fs.readFileSync('package.json','utf8'));
+          assert.equal(meta.repository,'https://github.com/ABODAH1234/pmp-performance-salla-theme');
+          assert.equal(pkg.repository.url,'git+https://github.com/ABODAH1234/pmp-performance-salla-theme.git');
+          for(const f of ['public/app.css','public/app.js','public/pmp.css','public/pmp.js']) assert(fs.statSync(f).size>0,f);
+          NODE
